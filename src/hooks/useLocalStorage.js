@@ -5,7 +5,7 @@ const useLocalStorage = (key, initialValue) => {
     const [storedValue, setStoredValue] = useState(() => {
         const item = window.localStorage.getItem(key);
         //if item is defined, return the item parsed. otherwise, use the initial value.
-        return item ? JSON.parse(item) : initialValue;
+        return (item ? JSON.parse(item) : initialValue);
     });
 
     const setValue = value => {
